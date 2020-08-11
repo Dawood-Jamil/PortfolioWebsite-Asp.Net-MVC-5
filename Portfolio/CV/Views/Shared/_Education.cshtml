@@ -1,0 +1,37 @@
+﻿@model ResumeEntities
+
+@{ 
+    var _context = new ResumeEntities();
+    var models = _context.Educations.ToList();
+}
+
+<div id="education" class="education-section bg-color section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="section-content">
+                    <div class="section-title">
+                        <h1>Education</h1>
+                    </div>
+                    <div class="text-info">
+                        <h4>Just My Educational Background</h4>
+                        <p>Its been a very entertaining educational journey for me, from school, to college and finally to university. Thoroughly enjoyed every moment of it ,having spent quite a chunk of my life in it, done challenging assignments and fun with the colleagues. Let me tell you a brief educational Background.</p>
+                    </div>
+                    @foreach (var item in models)
+                    {
+                        <div class="education-info">
+                            <img class="img-fluid img-size" src="~/Content/PortfolioImages/@item.Image" />
+                            <h3>@item.Institution_Name</h3>
+                            <h5>@item.Degree_Name</h5>
+                            <h6>@item.Duration_From.Date.Year - @item.Duration_TO.Date.Year</h6>
+                            <p>@item.Description</p>
+                        </div>
+                        <hr />
+                    }
+
+
+                </div>
+            </div>
+        </div><!-- row -->
+    </div><!-- container -->
+</div><!-- education section -->

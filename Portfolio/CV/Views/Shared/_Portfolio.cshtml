@@ -1,0 +1,48 @@
+﻿@model CV.Project
+
+@{ 
+    var _context = new ResumeEntities();
+    var projects = _context.Projects.ToList();
+}
+
+<div id="portfolio" class="portfolio-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="section-title">
+                    <h1>Portfolio</h1>
+                </div>
+                <div class="text-info">
+                    <h4>My Projects</h4>
+                    @*<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>*@
+                </div>
+               
+            <div class="portfolio-content">
+               
+                <div class="row">
+                    @foreach (var item in projects)
+                    {
+                        <div class="col-sm-6">
+                            <div class="portfolio-item">
+                                <img class="project-img" src="../Content/PortfolioImages/@item.Image" alt="Image">
+                                <div class="projectsection-text">
+                                    <a href="@item.Link"> <h4>ExoticPets Website</h4></a>
+                                    <h5>@item.Tech_Used</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                     }
+
+
+
+
+
+
+                </div>
+            </div><!-- portfolio content -->
+            </div>
+        </div><!-- row -->
+    </div><!-- container -->
+</div><!-- portfolio section -->
+

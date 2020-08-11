@@ -1,0 +1,194 @@
+﻿
+@{ 
+    var _context = new ResumeEntities();
+    var Info = _context.Personal_info.ToList();
+    var Education = _context.Educations.ToList();
+    var Experiences = _context.Experiences.ToList();
+    var Languages = _context.Languages.ToList();
+    var Skills = _context.Skills.ToList();
+    var Portfolio = _context.Portfolios.ToList();
+    
+}
+<div id="profile" class="profile-section  bg-color section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="section-content">
+                    @foreach (var item in Info)
+                    {
+                        <div class="profile-logo">
+                            <img style="width:150px; height:200px;" class="img-fluid" src="../Content/PortfolioImages/@item.image" alt="Image">
+                        </div>
+                        <div class="profile-info">
+                            <h1>@item.Name</h1>
+                            <h4>@item.Field</h4>
+                            <address>
+                                <p>Address: @item.Address <br> Phone: @item.Phone <br> Email: <span class="__cf_email__">@item.Email</span></p>
+                            </address>
+                        </div><!-- profile info -->
+                        <div class="career-objective">
+                            <div class="title">
+                                <div class="icons">
+                                    <i class="fa fa-black-tie" aria-hidden="true"></i>
+                                </div>
+                                <h3>Career Objective</h3>
+                            </div>
+                            <div class="sub-content">
+                                <p>@item.Description</p>
+                            </div>
+                        </div>
+                    }
+                    <!-- career objective -->
+                    <hr>
+                    <div class="work-history">
+                        <div class="title">
+                            <div class="icons">
+                                <i class="fa fa-briefcase" aria-hidden="true"></i>
+                            </div>
+                            <h3>Work History</h3>
+                        </div>
+                        @foreach (var item in Experiences)
+                        {
+                            <div class="sub-content">
+                                <div class="history">
+                                    <h4>@item.Company</h4>
+                                    <h5>@item.Position</h5>
+                                    <h6>@item.Duration_From.Date.Year - @item.Duration_To.Date.Year</h6>
+                                    <p>@item.Description</p>
+                                </div>
+
+                            </div>
+                            <hr />
+                        }
+
+                    </div><!-- work history -->
+
+                    <div class="educational-background">
+                        <div class="title">
+                            <div class="icons">
+                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                            </div>
+                            <h3>Educational Background</h3>
+                        </div>
+                        <div class="sub-content">
+                            @foreach (var item in Education)
+                            {
+                                <div class="education">
+                                    <h5>@item.Degree_Name</h5>
+                                    <p>@item.Duration_From.Date.Year - @item.Duration_TO.Date.Year</p>
+                                </div>
+                                <hr>
+                            }
+
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="language-proficiency">
+                        <div class="title">
+                            <div class="icons">
+                                <i class="fa fa-language" aria-hidden="true"></i>
+                            </div>
+                            <h3>Language Proficiency</h3>
+                        </div>
+                        <div class="sub-content">
+                            <ul class="list-inline">
+                                @foreach (var item in Languages)
+                                {
+                                    <li>
+                                        <h5>@item.Name</h5>
+                                        <ul>
+                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                            <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                                        </ul>
+                                    </li>
+                                }
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="expertise">
+                        <div class="title">
+                            <div class="icons">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                            </div>
+                            <h3>Expertise</h3>
+                        </div>
+                        <div class="sub-content">
+                            <div class="row">
+                                @foreach (var item in Skills)
+                                {
+                                    <div class="col-sm-4">
+                                        <div class="rating-bar">
+                                            <label>@item.Name</label>
+                                            <div class="skill-progress">
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="@item.Skill_Percentage" aria-valuemin="0" aria-valuemax="100">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div><!-- row -->
+
+                        </div>
+                    </div><!-- expertise -->
+                    <hr>
+                    <div class="personal-info">
+                        <div class="title">
+                            <div class="icons">
+                                <i class="fa fa-user-secret" aria-hidden="true"></i>
+                            </div>
+                            <h3>Personal Info</h3>
+                        </div>
+                        <div class="sub-content">
+                            <ul class="address">
+                                @foreach (var item in Info)
+                                {
+                                    <li><h5>Full Name </h5> <span>:</span>@item.Name</li>
+                                    <li><h5>Father's Name </h5> <span>:</span>@item.Father_Name</li>
+                                    <li><h5>Date of Birth </h5> <span>:</span>@item.DOB.Date.ToShortDateString()</li>
+                                    <li><h5>Birth Place </h5> <span>:</span>@item.BirthPlace</li>
+                                    <li><h5>Nationality </h5> <span>:</span>@item.Nationality</li>
+                                    <li><h5>Sex </h5> <span>:</span>@item.Gender</li>
+                                    <li><h5>Address </h5> <span>:</span>@item.Address</li>
+                                }
+
+                            </ul>
+                        </div>
+                    </div><!-- personal info -->
+                    <hr>
+                    <div class="portfolio">
+                        <div class="title">
+                            <div class="icons">
+                                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                            </div>
+                            <h3>Portfolio</h3>
+                        </div>
+                        <div class="sub-content">
+                            <ul>
+                                @foreach (var item in Portfolio)
+                                {
+                                    <li><h5>@item.Type </h5> <span>:</span><a href="@item.Link">@item.Link</a></li>
+                                }
+
+
+                            </ul>
+                        </div>
+                    </div><!-- portfolio -->
+                    <hr>
+
+                </div>
+                <div class="button">
+                    <a href="/admin/DownloadCV" class="btn btn-primary">Download My Resume as a .pdf file</a>
+                </div>
+            </div>
+        </div><!-- row -->
+    </div><!-- container -->
+</div><!-- profile section -->

@@ -1,0 +1,78 @@
+﻿@model CV.ResumeEntities
+
+
+<div id="skill" class="skill-section bg-color section-padding">
+    @{
+        var _context = new ResumeEntities();
+        var skills = _context.Skills.ToList();
+        var count = 0;
+        var languages = _context.Languages.ToList();
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="section-content">
+                        <div class="section-title">
+                            <h1>My Skills</h1>
+                        </div>
+
+                        <div class="progress-content">
+                            <div class="rating-bar bar-left">
+
+                                @foreach (var item in skills)
+                                {
+
+                                    if (item.Id % 2 !=0)
+                                    {
+                                        <label>@item.Name</label>
+                                        <span class="rating-count pull-right">@item.Skill_Percentage%</span>
+                                        <div class="skill-progress">
+                                            <div class="progress">
+                                                <div class="progress-bar bar1" role="progressbar" aria-valuenow="@item.Skill_Percentage" aria-valuemin="0" aria-valuemax="100">
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+
+                                }
+                            </div>
+
+                            <div class="skill rating-bar bar-right">
+
+                                @foreach (var item in skills)
+                                {
+                                    if (item.Id %2 == 0)
+                                    {
+                                        <label> @item.Name </label>
+                                        <span class="rating-count pull-right">@item.Skill_Percentage</span>
+                                        <div class="skill-progress">
+                                            <div class="progress">
+                                                <div class="progress-bar bar2" role="progressbar" aria-valuenow="@item.Skill_Percentage" aria-valuemin="0" aria-valuemax="100">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+
+                            </div>
+
+                        </div>
+
+                        <!-- more skill -->
+                    </div>
+                </div>
+            </div><!-- row -->
+        </div><!-- container -->
+    }
+</div><!-- skill section -->
+
