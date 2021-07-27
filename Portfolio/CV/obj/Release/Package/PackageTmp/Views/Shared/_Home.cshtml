@@ -1,0 +1,25 @@
+﻿@model CV.ResumeEntities
+
+<div id="home-banner" class="home-banner-one">
+    @{
+        var _context = new ResumeEntities();
+        var info = _context.Personal_info.ToList();
+        foreach (var item in info)
+        {
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="banner-content">
+                            <div class="banner-info">
+                                <h1>Hello, I am</h1>
+                                <h2>@item.Name</h2>
+                                <h3>@item.Field</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- row -->
+            </div><!-- container -->
+        }
+    }
+</div>

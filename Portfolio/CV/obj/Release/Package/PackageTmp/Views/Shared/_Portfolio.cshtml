@@ -1,0 +1,69 @@
+﻿@model CV.Project
+
+@{ 
+    var _context = new ResumeEntities();
+    var projects = _context.Projects.ToList();
+}
+
+<div id="portfolio" class="portfolio-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="section-title">
+                    <h1>Portfolio</h1>
+                </div>
+                <div class="text-info">
+                    <h4>My Projects</h4>
+                    @*<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>*@
+                </div>
+               
+            <div class="portfolio-content">
+               
+                <div class="row">
+                    @foreach (var item in projects)
+                    {
+                        @*<div class="col-md-6 col-sm-12">
+                            <div class="portfolio-item">
+                                <img class="project-img" src="../Content/PortfolioImages/@item.Image" alt="Image" style="width:200px; height:200px;">
+                                <div class="projectsection-text">
+                                    <a href="@item.Link"> <h4>@item.Project_Name</h4></a>
+                                    <h5>@item.Tech_Used</h5>
+                                </div>
+                            </div>
+                        </div>*@
+
+                        <div class="card" style="width: 18rem; margin:10px">
+                            <img class="card-img-top" src="@Url.Content("~/Content/Images/PortfolioImages/"+@item.Image)"  alt="Image" style="height:200px">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Project_Name </h5>
+                                @{
+                                  if (item.Status.Equals(true))
+                                      {
+                                        <p class="card-text">Status:  Online</p>
+                                     }
+                                 else
+                                    {
+                                        <p class="card-text">Status: Offline</p>
+                                    }
+                                 }
+                                <p class="card-text">@item.Tech_Used</p>
+                                <a href="@item.Link" class="btn btn-primary">Visit</a>
+                               
+                               
+                            </div>
+                        </div>
+
+                    }
+
+
+
+
+
+
+                </div>
+            </div><!-- portfolio content -->
+            </div>
+        </div><!-- row -->
+    </div><!-- container -->
+</div><!-- portfolio section -->
+

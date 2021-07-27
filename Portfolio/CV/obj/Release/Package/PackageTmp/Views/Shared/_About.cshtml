@@ -1,0 +1,55 @@
+﻿
+<div id="about" class="about-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                @{
+                    var _context = new ResumeEntities();
+                    var info = _context.Personal_info.ToList();
+
+                    foreach (var item in info)
+                    {
+
+                        <div class="section-title">
+                            <h1>@item.Name</h1>
+                            <h4>Web Developer</h4>
+                        </div>
+                        <div class="about-info">
+                            <p>@item.Description</p>
+                            <div class="signature">
+                                <h1>@item.Name</h1>
+                            </div>
+                        </div>
+                        <address>
+                            <p><span>Email:</span>@item.Email</p>
+                            <p><span>Phone:</span> @item.Phone</p>
+                            <p><span>Date of Birth:</span> @item.DOB.Date.ToString("dd/MM/yyyy")</p>
+                            <p><span>Address:</span> @item.Address</p>
+                        </address>
+
+                        
+                        <ul class="achievement">
+                            <li class="achievement-info">
+                                <span class="counter">@item.Projects_done</span>
+                                <h4>Projects completed</h4>
+                            </li>
+                            @*<li class="achievement-info">
+                                <span class="counter counter1">19</span>
+                                <h4>Winning Awards</h4>
+                            </li>
+                            <li class="achievement-info">
+                                <span class="counter counter2">230</span>
+                                <h4>Happy Clients</h4>
+                            </li>*@
+                            <li class="achievement-info">
+                                <span class="counter counter3">@item.Projects_online</span>
+                                <h4>Running Projects</h4>
+                            </li>
+                        </ul>
+                    }
+                }
+            </div>
+        </div><!-- row -->
+
+    </div><!-- container -->
+</div><!-- about section -->

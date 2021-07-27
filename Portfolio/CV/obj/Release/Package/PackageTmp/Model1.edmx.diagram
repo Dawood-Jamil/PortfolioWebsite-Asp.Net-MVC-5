@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e44e7f5bf9f849be87325753b22b389f" Name="Diagram1">
+        <EntityTypeShape EntityType="ResumeModel.Skill" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ResumeModel.Language" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ResumeModel.Admin_Users" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ResumeModel.Personal_info" Width="1.5" PointX="0.75" PointY="0.625" />
+        <EntityTypeShape EntityType="ResumeModel.Education" Width="1.5" PointX="3.375" PointY="6.75" />
+        <EntityTypeShape EntityType="ResumeModel.Experience" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ResumeModel.Project" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="ResumeModel.SocialLink" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="ResumeModel.Portfolio" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ResumeModel.Message" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ResumeModel.WebRole" Width="1.5" PointX="7.625" PointY="6.875" />
+        <AssociationConnector Association="ResumeModel.FK_WebRoles_Admin_Users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

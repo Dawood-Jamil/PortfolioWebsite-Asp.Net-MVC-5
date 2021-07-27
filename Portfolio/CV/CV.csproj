@@ -151,14 +151,6 @@
     <Content Include="Content\images\ico\favicon.ico" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\Ncbae.png" />
-    <Content Include="Content\images\portfolio\1.jpg" />
-    <Content Include="Content\images\portfolio\2.jpg" />
-    <Content Include="Content\images\portfolio\3.jpg" />
-    <Content Include="Content\images\portfolio\4.jpg" />
-    <Content Include="Content\images\portfolio\5.jpg" />
-    <Content Include="Content\images\portfolio\6.jpg" />
-    <Content Include="Content\images\portfolio\7.jpg" />
-    <Content Include="Content\images\portfolio\8.jpg" />
     <Content Include="Content\images\profile.jpg" />
     <Content Include="Content\Login\css\main.css" />
     <Content Include="Content\Login\css\util.css" />
@@ -368,7 +360,6 @@
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_About.cshtml" />
-    <Content Include="Views\Shared\_Home.cshtml" />
     <Content Include="Views\Shared\_Skill.cshtml" />
     <Content Include="Views\Shared\_Education.cshtml" />
     <Content Include="Views\Shared\_Experience.cshtml" />
@@ -385,10 +376,8 @@
     <Content Include="Views\Admin\EditEducation.cshtml" />
     <Content Include="Views\Admin\ExperienceForm.cshtml" />
     <Content Include="Views\Admin\ProjectForm.cshtml" />
-    <Content Include="Views\Admin\EditProject.cshtml" />
     <Content Include="Views\Shared\_Contact.cshtml" />
     <Content Include="Views\Shared\_Profile.cshtml" />
-    <Content Include="Views\Shared\_Nav.cshtml" />
     <Content Include="Views\Admin\SocialMedia.cshtml" />
     <Content Include="Views\Admin\CreateSocialMedia.cshtml" />
     <Content Include="Views\Admin\EditSocialMedia.cshtml" />
@@ -397,6 +386,9 @@
     <Content Include="Views\Admin\Portfolio.cshtml" />
     <Content Include="Views\Admin\CreatePortfolio.cshtml" />
     <Content Include="Views\Admin\View1.cshtml" />
+    <Content Include="Views\Shared\_Nav.cshtml" />
+    <Content Include="Views\Shared\_Home.cshtml" />
+    <Content Include="Views\Admin\EditProject.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -407,7 +399,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\CV\" />
-    <Folder Include="Content\PortfolioImages\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

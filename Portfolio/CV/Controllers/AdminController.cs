@@ -306,7 +306,7 @@ namespace CV.Controllers
 
         public ActionResult EditProject(int id)
         {
-            var obj = _context.Projects.Single(m => m.Id == id);
+            var obj = _context.Projects.SingleOrDefault(m => m.Id == id);
             var status = obj.Status;
             ProjectsViewModel viewModel = new ProjectsViewModel()
             {
@@ -328,7 +328,7 @@ namespace CV.Controllers
             {
                 if(file!=null)
                 {
-                    string path = System.IO.Path.Combine("../Content/PortfolioImages/" + file.FileName);
+                    string path = System.IO.Path.Combine("~/Content/Images/PortfolioImages/" + file.FileName);
                     file.SaveAs(Server.MapPath(path));
 
                 }
@@ -366,7 +366,14 @@ namespace CV.Controllers
 
         public ActionResult DeleteProject(int id)
         {
+           
             var model = _context.Projects.Single(m => m.Id == id);
+            var fullpath = Request.MapPath("~/Content/Images/PortfolioImages/" + model.Image);
+
+            if (System.IO.File.Exists(fullpath))
+            {
+                System.IO.File.Delete(fullpath);
+            }
             _context.Projects.Remove(model);
             _context.SaveChanges();
             return RedirectToAction("Projects");
@@ -498,7 +505,7 @@ namespace CV.Controllers
 
         public FileResult DownloadCV()
         {
-            return File("~/Content/CV/Dawood_CV.pdf", "pdf", "Dawood_Resume");
+            return File("~/Content/CV/Resume.pdf", "pdf", "Dawood_Resume");
         }
 
         public ActionResult Logout()

@@ -22,20 +22,32 @@
                 <div class="row">
                     @foreach (var item in projects)
                     {
-                        <div class="col-sm-6">
+                        @*<div class="col-md-6 col-sm-12">
                             <div class="portfolio-item">
-                                <img class="project-img" src="../Content/PortfolioImages/@item.Image" alt="Image">
+                                <img class="project-img" src="../Content/PortfolioImages/@item.Image" alt="Image" style="width:200px; height:200px;">
                                 <div class="projectsection-text">
-                                    <a href="@item.Link"> <h4>ExoticPets Website</h4></a>
+                                    <a href="@item.Link"> <h4>@item.Project_Name</h4></a>
                                     <h5>@item.Tech_Used</h5>
                                 </div>
                             </div>
+                        </div>*@
+
+                        <div class="card" style="width: 18rem; margin:10px">
+                            <img class="card-img-top" src="@Url.Content("~/Content/Images/PortfolioImages/"+@item.Image)"  alt="Image" style="height:200px">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Project_Name </h5>
+                               
+                                 
+                                <p class="card-text">@item.Tech_Used</p>
+                                <a href="@item.Link" class="btn btn-primary">Visit</a>
+                               
+                               
+                            </div>
                         </div>
 
-                     }
 
 
-
+                    }
 
 
 
